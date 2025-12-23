@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            body 
+            {
+            font-family:Arial,sans-serif;
+            background-color:rgb(109, 242, 73);
+            color:white;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            border-radius: 5%;
+            background: rgb(215, 40, 221);
+            }
+            .table  
+            {
+
+                width: 550px;
+                height: 400px;
+                background-color: crimson;
+                border: 5px solid cyan;
+                padding: 40px;
+                margin: 100px auto;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    
+<body>
+    <div class="table">
+        <h1>Mileage Calculator</h1>
+        <h3>R NITHISH AADITIYAA [25011876]</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Distance:</label>
+            <input type="number" name="distance" value="{{ km }}">
+            <br><br>
+
+            <label>Fuel:</label>
+            <input type="number" name="fuel" value="{{ lt }}">
+            <br><br>
+
+            <button type="submit">Calculate</button>
+            <br><br>
+
+            <label>Mileage (KM/Litre):</label>
+            <input type="number" value="{{ mileage }}" readonly> km/l
+        </form>
+    </div>
+</body>
+</html>
